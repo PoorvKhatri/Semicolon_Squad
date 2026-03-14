@@ -29,16 +29,16 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-20 border-b border-white/10 bg-black/40 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-white/10 bg-white/40 dark:bg-black/40 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-center justify-between gap-4 py-4">
           <div className="relative flex flex-1 items-center">
-            <Search className="pointer-events-none absolute left-4 h-4 w-4 text-secondary-400" />
+            <Search className="pointer-events-none absolute left-4 h-4 w-4 text-secondary-400 dark:text-secondary-400" />
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search products, SKU, orders..."
-              className="h-11 w-full rounded-xl border border-white/10 bg-white/5 px-11 text-sm text-secondary-100 placeholder:text-secondary-500 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30"
+              className="h-11 w-full rounded-xl border border-secondary-200 dark:border-white/10 bg-secondary-50 dark:bg-white/5 px-11 text-sm text-secondary-900 dark:text-secondary-100 placeholder:text-secondary-400 dark:placeholder:text-secondary-500 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30"
             />
           </div>
 
@@ -71,8 +71,8 @@ export default function Navbar() {
                 to={item.to}
                 className={`whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium transition ${
                   active
-                    ? "bg-white/10 text-white"
-                    : "text-secondary-200 hover:bg-white/10 hover:text-white"
+                    ? "bg-secondary-100 dark:bg-white/10 text-secondary-900 dark:text-white"
+                    : "text-secondary-600 dark:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-white/10 hover:text-secondary-900 dark:hover:text-white"
                 }`}
               >
                 {item.label}

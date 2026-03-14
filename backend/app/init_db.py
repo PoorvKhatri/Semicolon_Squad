@@ -2,7 +2,7 @@
 
 from app.core.database import engine
 from app.models.base import Base
-from app.models import product, user, warehouse, stock_move, password_reset
+from app.models import product, user, warehouse, stock_move, password_reset, stock, operations
 
 
 def init_db() -> None:

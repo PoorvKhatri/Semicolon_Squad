@@ -11,7 +11,7 @@ export default function Card({
   return (
     <div
       className={twMerge(
-        "glass relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-soft backdrop-blur",
+        "glass relative overflow-hidden rounded-2xl border border-secondary-200 dark:border-white/10 bg-secondary-50 dark:bg-white/5 shadow-soft backdrop-blur",
         className
       )}
     >

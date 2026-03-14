@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import DashboardPage from "./pages/DashboardPage";
@@ -9,7 +10,8 @@ import TransfersPage from "./pages/TransfersPage";
 import AdjustmentsPage from "./pages/AdjustmentsPage";
 import SettingsPage from "./pages/SettingsPage";
 import HistoryPage from "./pages/HistoryPage";
-import ReportsPage from "./pages/ReportsPage";
+import WarehousesPage from "./pages/WarehousesPage";
+import LocationsPage from "./pages/LocationsPage";
 import LogoutPage from "./pages/LogoutPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
@@ -17,10 +19,17 @@ import ProfilePage from "./pages/ProfilePage";
 import SignupPage from "./pages/SignupPage";
 
 export default function App() {
+  useEffect(() => {
+    // Initialize theme on app load
+    const stored = window.localStorage.getItem("coreinventory-theme");
+    const preferDark = stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.classList.toggle("dark", preferDark);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-surface-950 text-secondary-100">
+    <div className="min-h-screen bg-white text-secondary-900 dark:bg-surface-950 dark:text-secondary-100">
       <Routes>
-        <Route path="/" element={<Navigate replace to="/dashboard" />} />
+        <Route path="/" element={<Navigate replace to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
@@ -33,7 +42,8 @@ export default function App() {
         <Route path="/transfers" element={<TransfersPage />} />
         <Route path="/adjustments" element={<AdjustmentsPage />} />
         <Route path="/history" element={<HistoryPage />} />
-        <Route path="/reports" element={<ReportsPage />} />
+        <Route path="/warehouses" element={<WarehousesPage />} />
+        <Route path="/locations" element={<LocationsPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route

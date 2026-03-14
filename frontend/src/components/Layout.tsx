@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const wrapperClass = useMemo(
-    () => `min-h-screen bg-surface-950 text-slate-100 transition-colors duration-300`,
+    () => `min-h-screen bg-white dark:bg-surface-950 text-secondary-900 dark:text-slate-100 transition-colors duration-300`,
     []
   );
 

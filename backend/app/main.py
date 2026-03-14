@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import router as api_router
+from app.init_db import init_db
 
 app = FastAPI(title="CoreInventory API", version="0.1.0")
 
@@ -14,3 +15,10 @@ app.add_middleware(
 )
 
 app.include_router(api_router, prefix="/api")
+
+
+@app.on_event("startup")
+def startup_event():
+    """Initialize database tables on application startup."""
+    init_db()
+    print("Database tables initialized successfully.")

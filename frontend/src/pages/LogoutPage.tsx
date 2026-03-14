@@ -5,7 +5,7 @@ export default function LogoutPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // clear any auth tokens here when implemented
+    localStorage.removeItem("access_token");
     navigate("/login", { replace: true });
   }, [navigate]);
 

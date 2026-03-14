@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class WarehouseBase(BaseModel):
@@ -20,8 +20,7 @@ class WarehouseUpdate(BaseModel):
 class WarehouseOut(WarehouseBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class LocationBase(BaseModel):
@@ -42,5 +41,4 @@ class LocationUpdate(BaseModel):
 class LocationOut(LocationBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

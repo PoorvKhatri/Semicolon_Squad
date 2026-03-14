@@ -2,6 +2,21 @@
 
 A starter full-stack Inventory Management System (IMS) scaffold using **React + Tailwind** for the frontend and **FastAPI + SQLAlchemy** for the backend.
 
+---
+
+## 📚 **START HERE: Complete Documentation**
+
+| Document | Description |
+|----------|-------------|
+| **[📖 README_COMPREHENSIVE.md](README_COMPREHENSIVE.md)** | **FULL PROJECT GUIDE** - System overview, architecture, all features, workflows, API reference, troubleshooting |
+| **[⚡ README_QUICK_REFERENCE.md](README_QUICK_REFERENCE.md)** | **QUICK START** - Fast setup instructions, key workflows, common issues |
+| [SYSTEM_ARCHITECTURE.md](SYSTEM_ARCHITECTURE.md) | Technical architecture details |
+
+👉 **New to the project? Start with [README_COMPREHENSIVE.md](README_COMPREHENSIVE.md)**  
+⚡ **Just want to run it? See [README_QUICK_REFERENCE.md](README_QUICK_REFERENCE.md)**
+
+---
+
 ## 📁 Workspace Structure
 
 - `frontend/` - React + Vite UI application (dashboard, products, receipts, deliveries, transfers, adjustments)

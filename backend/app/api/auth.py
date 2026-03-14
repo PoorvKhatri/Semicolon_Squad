@@ -15,7 +15,7 @@ from app.schemas.user import UserCreate, UserOut, ForgotPasswordRequest, ResetPa
 
 settings = get_settings()
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/token")
 
 router = APIRouter()

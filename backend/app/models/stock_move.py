@@ -1,4 +1,5 @@
 from datetime import datetime
+from enum import Enum as PyEnum
 
 from sqlalchemy import Column, DateTime, Enum, ForeignKey, Integer, Numeric, String
 from sqlalchemy.orm import relationship
@@ -6,7 +7,7 @@ from sqlalchemy.orm import relationship
 from app.models.base import Base
 
 
-class StockMoveType(str, Enum):
+class StockMoveType(str, PyEnum):
     RECEIPT = "receipt"
     DELIVERY = "delivery"
     TRANSFER = "transfer"
@@ -23,6 +24,7 @@ class StockMove(Base):
     source_location_id = Column(Integer, ForeignKey("locations.id"), nullable=True)
     dest_location_id = Column(Integer, ForeignKey("locations.id"), nullable=True)
     reference = Column(String(256), nullable=True)
+    status = Column(String(32), default="Done", nullable=False)
     created_by_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 

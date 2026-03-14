@@ -23,5 +23,7 @@ class Product(Base):
     uom = Column(String(32), nullable=False, default="pcs")
     category_id = Column(Integer, ForeignKey("categories.id"), nullable=True)
     description = Column(String(512), nullable=True)
+    initial_stock = Column(Integer, nullable=True, default=0)
+    reorder_point = Column(Integer, nullable=True, default=0)
 
     category = relationship("Category", back_populates="products")

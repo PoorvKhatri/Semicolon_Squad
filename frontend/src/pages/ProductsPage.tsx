@@ -15,6 +15,8 @@ export default function ProductsPage() {
     sku: string;
     uom: string;
     description?: string | null;
+    initial_stock?: number;
+    reorder_point?: number;
   };
   const [products, setProducts] = useState<Product[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
